@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/datosCliente">
+
+    <fragment
+        android:id="@+id/datosCliente"
+        android:name="com.example.saborcitou_app.DatosCliente"
+        android:label="fragment_datos_cliente"
+        tools:layout="@layout/fragment_datos_cliente" >
+        <action
+            android:id="@+id/action_datosCliente_to_historialOrdenes"
+            app:destination="@id/historialOrdenes" />
+        <action
+            android:id="@+id/action_datosCliente_to_menuOrdenar"
+            app:destination="@id/menuOrdenar" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuOrdenar"
+        android:name="com.example.saborcitou_app.MenuOrdenar"
+        android:label="fragment_menu_ordenar"
+        tools:layout="@layout/fragment_menu_ordenar" >
+        <action
+            android:id="@+id/action_menuOrdenar_to_completarOrden"
+            app:destination="@id/completarOrden" />
+    </fragment>
+    <fragment
+        android:id="@+id/completarOrden"
+        android:name="com.example.saborcitou_app.CompletarOrden"
+        android:label="fragment_completar_orden"
+        tools:layout="@layout/fragment_completar_orden" >
+        <action
+            android:id="@+id/action_completarOrden_to_datosCliente"
+            app:destination="@id/datosCliente" />
+    </fragment>
+    <fragment
+        android:id="@+id/historialOrdenes"
+        android:name="com.example.saborcitou_app.HistorialOrdenes"
+        android:label="fragment_historial_ordenes"
+        tools:layout="@layout/fragment_historial_ordenes" />
+</navigation>

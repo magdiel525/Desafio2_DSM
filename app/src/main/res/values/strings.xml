@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SaborcitoU_App</string>
+    <string name="text_bienvenidos">Bienvenidos</string>
+    <string name="btn_ordenar">Ordenar</string>
+    <string name="btn_historial">Historial</string>
+    <string name="btn_pedido">Detalle Pedido</string>
+    <string name="btn_regresar">Regresar al Menú Principal</string>
+
+
+
+</resources>
