@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:layout_marginTop="20dp"
-        android:inputType="textPersonName"
+        android:inputType="phone"
         android:gravity="center"
         android:hint="Ingresar DUI"
         />
