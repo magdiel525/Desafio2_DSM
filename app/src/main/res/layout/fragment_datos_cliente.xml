@@ -9,61 +9,79 @@
     tools:context=".DatosCliente">
 
 
-    <ImageView
-        android:id="@+id/img_logo"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="271dp"
-        android:src="@drawable/splash" />
-
-    <TextView
-        android:id="@+id/txt_datos_cliente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_bienvenidos"
-        android:layout_marginBottom="20dp"
-        android:textSize="40dp"
-
-        android:textColor="#000000"
-        android:textStyle="bold"
-        />
-
-    <EditText
-        android:id="@+id/edit_idcliente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:layout_marginTop="20dp"
-        android:inputType="textPersonName"
-        android:gravity="center"
-        android:hint="Ingresar DUI"
-        />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="60dp"
-        >
-
-        <Button
-            android:id="@+id/btn_ordenar"
-            style="@style/Widget.AppCompat.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:text="@string/btn_ordenar"
-
-            android:textAllCaps="false" />
+        android:layout_height="match_parent">
 
         <Button
             android:id="@+id/btn_historial"
             style="@style/Widget.AppCompat.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
             android:layout_marginHorizontal="20dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="250dp"
             android:gravity="center"
             android:text="@string/btn_historial"
-            android:textAllCaps="false" />
-    </LinearLayout>
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_ordenar" />
+
+        <Button
+            android:id="@+id/btn_ordenar"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="20dp"
+
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="250dp"
+            android:text="@string/btn_ordenar"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_historial"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/edit_idcliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Ingresar DUI"
+            android:inputType="phone"
+            app:layout_constraintBottom_toTopOf="@+id/btn_ordenar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_datos_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:text="@string/text_bienvenidos"
+
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="28dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/edit_idcliente"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/img_logo"
+            android:layout_width="match_parent"
+            android:layout_height="271dp"
+            android:src="@drawable/splash"
+            app:layout_constraintBottom_toTopOf="@+id/txt_datos_cliente"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </LinearLayout>
