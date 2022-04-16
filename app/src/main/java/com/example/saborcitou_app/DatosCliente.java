@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 
 public class DatosCliente extends Fragment {
@@ -33,12 +34,23 @@ public class DatosCliente extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         Button btnOrdenar = view.findViewById(R.id.btn_ordenar);
         Button btnHistorial = view.findViewById(R.id.btn_historial);
+        EditText IDCliente =(EditText) view.findViewById(R.id.edit_idcliente);
 
         final NavController navegador = Navigation.findNavController(view);
 
         btnOrdenar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                IDCliente.setError(null);
+                String posibleNumero = IDCliente.getText().toString();
+                if ("".equals(posibleNumero)) {
+                    IDCliente.setError("Introduce un DUI");
+                    IDCliente.requestFocus();
+                    return;
+                }
+                Bundle bundle = new Bundle();
+                bundle.putString("idCliente",IDCliente.getText().toString());
+                getParentFragmentManager().setFragmentResult("DatosCliente",bundle);
                 navegador.navigate(R.id.menuOrdenar);
             }
         });
@@ -46,6 +58,16 @@ public class DatosCliente extends Fragment {
         btnHistorial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                IDCliente.setError(null);
+                String posibleNumero = IDCliente.getText().toString();
+                if ("".equals(posibleNumero)) {
+                    IDCliente.setError("Introduce un DUI");
+                    IDCliente.requestFocus();
+                    return;
+                }
+                Bundle bundle = new Bundle();
+                bundle.putString("idCliente",IDCliente.getText().toString());
+                getParentFragmentManager().setFragmentResult("DatosCliente",bundle);
                 navegador.navigate(R.id.historialOrdenes);
             }
         });
