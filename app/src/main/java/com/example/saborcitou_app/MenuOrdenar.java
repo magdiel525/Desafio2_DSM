@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -87,7 +89,8 @@ public class MenuOrdenar extends Fragment {
         btn_pedido.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                final NavController navegador = Navigation.findNavController(view);
+                navegador.navigate(R.id.completarOrden);
 
             }
         });
